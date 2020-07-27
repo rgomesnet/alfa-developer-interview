@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TesteAlfa.Models.Airport>
+
+@{
+    ViewData["Title"] = "Airports";
+}
+
+<h1>Airports</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Endereço
+            </th>
+
+            <th>
+                Pais
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location.City.CountryRegion)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
